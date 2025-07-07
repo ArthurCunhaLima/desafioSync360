@@ -6,6 +6,7 @@ import com.desafio.repository.entity.Usuario;
 import com.desafio.service.UsuarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -23,7 +24,10 @@ public class UsuarioController {
     public String paginaInicial(){
         return "index";
     }
-
+    @GetMapping("alterar")
+    public String paginaAlterar(){
+        return "alterar/index";
+    }
 
 
 }
