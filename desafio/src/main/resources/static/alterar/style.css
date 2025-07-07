@@ -15,6 +15,7 @@ body{
     box-shadow: 2;
 }
 main{
+    width: 500px;
     max-width: 500px;
     margin: 5%;
     padding: 20px;
@@ -29,6 +30,7 @@ main{
 }
 li{
     margin: 10px;
+
 }
 .fotoPerfil{
     display: flex;
@@ -42,7 +44,11 @@ li{
     justify-content: center;
     align-items: center;
 }
-.botoes{
+.listaBotoes .uploadImagem input{
+    display: none;
+}
+.botoes , .uploadImagem{
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -50,12 +56,14 @@ li{
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #05060f0a;
     transition: 1s;
+    border: 2px solid transparent;
 }
-.botoes:hover , .botaoAlterar:hover{
+.botoes:hover , .botaoAlterar:hover, .uploadImagem:hover{
     cursor: pointer;
     transform: scale(0.9);
+    border-color: #05060f;
 }
 .botaoAlterar{
     display: flex;
@@ -63,6 +71,25 @@ li{
     align-items: center;
     transition: 1s;
 }
-input{
-    background-color: #fff;
+.input{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    width: 100%;
+    border-radius: 10px;
+    transition: 1s;
+    border: 2px solid transparent;
+}
+.input input{
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-color: #05060f0a;
+    transition: 1s;
+}
+input:hover{
+    border-color: #05060f;
+}
+.input label{
+    margin-bottom: 5px;
 }

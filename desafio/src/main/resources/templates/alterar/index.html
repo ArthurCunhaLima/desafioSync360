@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="PT-BR" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="alterar/style.css">
 </head>
 <body>
     <main>
     <ul>
         <li class="fotoPerfil">
-            <img src="../resources/usuario.png" alt="" width="128" height="128">
+            <img th:src="default.png" alt="" width="128" height="128">
             <div class="listaBotoes">
-                    <input type="file" accept="image/jpeg, image/png, image/jpg">
-                    <button type="submit" class="botoes">Enviar</button>
+                    <label class="uploadImagem">
+                        <input type="file" accept="image/jpeg, image/png, image/jpg">
+                        <p>Enviar imagem</p>
+                    </label> 
                     <button class="botoes">Remover</button>
             </div>
         </li>
     </ul>
     <div class="input">
-        <label for="">Digite seu nome</label>
+        <label >Digite seu nome : </label>
         <input type="text"></input>
-        <label for="">Digite sua idade</label>
+        <label >Digite sua idade : </label>
         <input type="text"></input>
-        <label for="">Digite seu Endereço</label>
+        <label >Digite seu endereço : </label>
         <input type="text"></input>
-        <label for="">Digite sua Biografia</label>
+        <label >Digite sua biografia : </label>
         <input type="text"></input>
     </div>
         <div class="listaBotoes">

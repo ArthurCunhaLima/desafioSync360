@@ -1,25 +1,28 @@
 package com.desafio.controller;
 
 
-import com.desafio.model.Usuario;
 import com.desafio.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.desafio.repository.entity.Usuario;
+import com.desafio.service.UsuarioService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@RestController
-@RequestMapping("usuario")
+@Controller
+@RequestMapping()
 public class UsuarioController {
     private final UsuarioRepository usuarioRepository;
+    private final UsuarioService usuarioService;
 
-    public UsuarioController(UsuarioRepository usuarioRepository){
+    public UsuarioController(UsuarioRepository usuarioRepository, UsuarioService usuarioService){
         this.usuarioRepository = usuarioRepository;
+        this.usuarioService = usuarioService;
     }
 
-
+    @GetMapping()
+    public String paginaInicial(){
+        return "index";
+    }
 
 
 

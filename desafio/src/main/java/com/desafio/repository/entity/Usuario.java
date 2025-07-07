@@ -1,4 +1,4 @@
-package com.desafio.model;
+package com.desafio.repository.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
