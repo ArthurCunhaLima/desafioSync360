@@ -21,5 +21,16 @@ public class UsuarioRestController {
     public void alterarIdade(@PathVariable int idade){
         usuarioService.getUsuario().setIdade(idade);
     }
-
+    @PutMapping("alterarNome")
+    public void alterarNome(@PathVariable String nome){
+        usuarioService.getUsuario().setNome(nome);
+    }
+    @PutMapping("alterarEndereco")
+    public void alterarEndereco(@PathVariable String endereco){
+        usuarioService.getUsuario().setEndereco(endereco);
+    }
+    @PutMapping("alterarBio")
+    public void alterarBio(@PathVariable String biografia){
+        usuarioService.getUsuario().setBiografia(biografia);
+    }
 }
