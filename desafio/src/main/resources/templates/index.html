@@ -14,15 +14,56 @@
         </li>
     </ul>
     <div class="retornos">
-        <p>Nome completo</p>
-        <p>Idade</p>
-        <p>Endereço</p>
-        <p>Biografia</p>
+        <p id="nome"></p>
+        <p id="idade"></p>
+        <p id="endereco"></p>
+        <p id="biografia"></p>
     </div>
         <div class="listaBotoes">
-            <a href="" class="botoes">Alterar</a>
+            <a th:href="@{/alterar}" class="botoes">Alterar</a>
         </div>
     </main>
+    <script>
+
+
+        function BuscarNome (){
+            fetch('/usuario/retornarNome')
+            .then(res => res.text())
+            .then(nomeUsuario => {
+                document.getElementById('nome').innerText = nomeUsuario;
+            })
+        }
+        function BuscarIdade (){
+            fetch('/usuario/retornarIdade')
+            .then(res => res.text())
+            .then(idadeUsuario => {
+                document.getElementById('idade').innerText = idadeUsuario;
+            })
+        }
+        function BuscarEndereco (){
+            fetch('/usuario/retornarEndereco')
+            .then(res => res.text())
+            .then(enderecoUsuario => {
+                document.getElementById('endereco').innerText = enderecoUsuario;
+            })
+        }
+        function BuscarBio (){
+            fetch('/usuario/retornarBiografia')
+            .then(res => res.text())
+            .then(biografiaUsuario => {
+                document.getElementById('biografia').innerText = biografiaUsuario;
+            })
+        }
+        function buscar(){
+            BuscarNome()
+            BuscarIdade()
+            BuscarEndereco()
+            BuscarBio()
+        }
+        
+        buscar()
+    </script>
+
 
 </body>
 </html>

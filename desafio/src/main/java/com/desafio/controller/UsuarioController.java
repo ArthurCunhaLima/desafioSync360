@@ -5,9 +5,8 @@ import com.desafio.repository.UsuarioRepository;
 import com.desafio.repository.entity.Usuario;
 import com.desafio.service.UsuarioService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping()
@@ -28,6 +27,26 @@ public class UsuarioController {
     public String paginaAlterar(){
         return "alterar/index";
     }
+    @PostMapping("/salvar")
+    public String salvarUsuario(
+            @RequestParam("nome") String nome,
+            @RequestParam("idade") Integer idade,
+            @RequestParam("endereco") String endereco,
+            @RequestParam("biografia") String biografia,
+            @RequestParam(value = "imagem", required = false) MultipartFile imagem
+    ) throws Exception {
+        usuarioService.getUsuario().setNome(nome);
+        usuarioService.getUsuario().setIdade(idade);
+        usuarioService.getUsuario().setEndereco(endereco);
+        usuarioService.getUsuario().setBiografia(biografia);
 
+        if (imagem != null && !imagem.isEmpty()) {
+            usuarioService.getUsuario().setImagem(imagem.getBytes());
+        }
+
+        usuarioRepository.save(usuarioService.getUsuario());
+
+        return "index";
+    }
 
 }

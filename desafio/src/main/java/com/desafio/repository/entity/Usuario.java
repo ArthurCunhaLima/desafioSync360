@@ -1,9 +1,7 @@
 package com.desafio.repository.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
+
 @Entity
 public class Usuario {
     @Id
@@ -11,14 +9,23 @@ public class Usuario {
     private long id;
     /// Funcionalidade Faltando, ALterar e Redirecionar a Imagem
     /// Solução : Vai salvar como String o caminho da imagem e quando for POST a imagem vai dar um DELETE na antiga
-    private String URLimagem;
     private String nome;
     private int idade;
     private String endereco;
     private String biografia;
 
+    @Lob
+    private byte[] imagem;
+
     public long getId() {
         return id;
+    }
+    public byte[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
     }
 
     public void setId(long id) {

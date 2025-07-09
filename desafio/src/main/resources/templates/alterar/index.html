@@ -11,29 +11,29 @@
     <ul>
         <li class="fotoPerfil">
             <img th:src="@{default.png}" alt="" width="128" height="128">
-            <div class="listaBotoes">
+            <form class="listaBotoes">
                     <label class="uploadImagem">
-                        <input type="file" accept="image/jpeg, image/png, image/jpg">
+                        <input type="file" name="imagem" accept="image/jpeg, image/png, image/jpg">
                         <p>Enviar imagem</p>
                     </label> 
                     <button class="botoes">Remover</button>
-            </div>
+            </form>
         </li>
     </ul>
-    <div class="input">
-        <label >Digite seu nome : </label>
-        <input type="text"></input>
-        <label >Digite sua idade : </label>
-        <input type="text"></input>
-        <label >Digite seu endereço : </label>
-        <input type="text"></input>
-        <label >Digite sua biografia : </label>
-        <input type="text"></input>
-    </div>
-        <div class="listaBotoes">
-            <button class="botoes">Alterar</button>
-        </div>
-    </main>
 
+    <form class="input" method="post" action="/salvar"  enctype="multipart/form-data">
+        <label >Digite seu nome : </label>
+        <input type="text" name="nome" placeholder=""></input>
+        <label >Digite sua idade : </label>
+        <input type="number" name="idade" min="0" max="120"></input>
+        <label >Digite seu endereço : </label>
+        <input type="text" name="endereco"></input>
+        <label >Digite sua biografia : </label>
+        <input type="text" name="biografia"></input>
+        <div class="listaBotoes">
+            <button class="botoes" type="submit">Salvar</button>
+        </div>
+    </form>
+    </main>
 </body>
 </html>
