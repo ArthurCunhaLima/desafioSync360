@@ -32,17 +32,12 @@ public class UsuarioController {
             @RequestParam("nome") String nome,
             @RequestParam("idade") Integer idade,
             @RequestParam("endereco") String endereco,
-            @RequestParam("biografia") String biografia,
-            @RequestParam(value = "imagem", required = false) MultipartFile imagem
+            @RequestParam("biografia") String biografia
     ) throws Exception {
         usuarioService.getUsuario().setNome(nome);
         usuarioService.getUsuario().setIdade(idade);
         usuarioService.getUsuario().setEndereco(endereco);
         usuarioService.getUsuario().setBiografia(biografia);
-
-        if (imagem != null && !imagem.isEmpty()) {
-            usuarioService.getUsuario().setImagem(imagem.getBytes());
-        }
 
         usuarioRepository.save(usuarioService.getUsuario());
 

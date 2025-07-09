@@ -14,19 +14,12 @@ public class Usuario {
     private String endereco;
     private String biografia;
 
-    @Lob
-    private byte[] imagem;
+
 
     public long getId() {
         return id;
     }
-    public byte[] getImagem() {
-        return imagem;
-    }
 
-    public void setImagem(byte[] imagem) {
-        this.imagem = imagem;
-    }
 
     public void setId(long id) {
         this.id = id;
