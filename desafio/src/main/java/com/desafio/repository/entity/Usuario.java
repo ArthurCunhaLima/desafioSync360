@@ -7,19 +7,15 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    /// Funcionalidade Faltando, ALterar e Redirecionar a Imagem
-    /// Solução : Vai salvar como String o caminho da imagem e quando for POST a imagem vai dar um DELETE na antiga
     private String nome;
     private int idade;
     private String endereco;
     private String biografia;
 
 
-
     public long getId() {
         return id;
     }
-
 
     public void setId(long id) {
         this.id = id;
