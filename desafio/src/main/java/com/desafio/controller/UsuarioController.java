@@ -2,11 +2,10 @@ package com.desafio.controller;
 
 
 import com.desafio.repository.UsuarioRepository;
-import com.desafio.repository.entity.Usuario;
 import com.desafio.service.UsuarioService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+
 
 @Controller
 @RequestMapping()
